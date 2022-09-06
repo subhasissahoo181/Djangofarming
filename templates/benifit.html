@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+        <!-- benifit list -->
+        <div class="containery" style="width: 1000px; align-items: center; background: rgb(104, 241, 62);     margin-bottom: 50px;margin-top: 170px; margin-left: 250px;padding: 20px;" >
+            <div class="location">
+                <h1 >Benificary list.</h1>
+                <br>
+                <div class="sub-location">
+                    <div class="filter-section">
+                        <div class="row">
+                                <label class="col-sm-1 col-md-1 control-label">
+                                    District</label>
+                                <div class="col-sm-2 col-md-2 ">
+                                <span class="colon">:</span>
+                                    <select name="ddlDistrict" onchange="javascript:setTimeout('__doPostBack(\'ddlDistrict\',\'\')', 0)" id="ddlDistrict" class="form-control">
+                        <option selected="selected" value="--Select--">--Select--</option>
+                        <option value="344">ANGUL</option>
+                        <option value="346">BALASORE</option>
+                        <option value="347">BARGARH</option>
+                        <option value="348">BHADRAK</option>
+                        <option value="345">BOLANGIR</option>
+                        <option value="349">BOUDH</option>
+                        <option value="350">CUTTACK</option>
+                        <option value="351">DEOGARH</option>
+                        <option value="352">DHENKANAL</option>
+                        <option value="353">GAJAPATI</option>
+                        <option value="354">GANJAM</option>
+                        <option value="355">JAGATSINGHPUR</option>
+                        <option value="356">JAJPUR</option>
+                        <option value="357">JHARSUGUDA</option>
+                        <option value="358">KALAHANDI</option>
+                        <option value="359">KANDHAMAL</option>
+                        <option value="360">KENDRAPARA</option>
+                        <option value="361">KEONJHAR</option>
+                        <option value="362">KHURDHA</option>
+                        <option value="363">KORAPUT</option>
+                        <option value="364">MALKANGIRI</option>
+                        <option value="365">MAYURBHANJ</option>
+                        <option value="366">NAWARANGPUR</option>
+                        <option value="367">NAYAGARH</option>
+                        <option value="368">NUAPADA</option>
+                        <option value="369">PURI</option>
+                        <option value="370">RAYAGADA</option>
+                        <option value="371">SAMBALPUR</option>
+                        <option value="372">SONEPUR</option>
+                        <option value="373">SUNDERGARH</option>
+                        
+                        </select>
+                                </div>
+                                <label class="col-sm-1 col-md-1 control-label">
+                                    Block/ULB</label>
+                                <div class="col-sm-2 col-md-2">
+                                    <span class="colon">:</span>
+                                    <select name="ddlBlock" onchange="javascript:setTimeout('__doPostBack(\'ddlBlock\',\'\')', 0)" id="ddlBlock" class="form-control chosen-select-width">
+                        
+                        </select>
+                                </div>
+                                <label class="col-sm-1 col-md-1 control-label">
+                                    G.P.</label>
+                                <div class="col-sm-3 col-md-3">
+                                    <span class="colon">:</span>
+                                    <select name="ddlGP" onchange="javascript:setTimeout('__doPostBack(\'ddlGP\',\'\')', 0)" id="ddlGP" class="form-control chosen-select-width">
+                        
+                        </select>
+                                </div>
+                                <div class="col-sm-1 col-md-1">
+                                    <input type="submit" name="btnView" value="View" id="btnView" class="btn btn-warning">
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+            <br />
+            </div>
+            <br />
+            <h3 align="center">Upload copy of  any application.</h3>
+            <br />
+            <div class="table-responsive">
+             <span id="message"></span>
+                <form method="post" id="load_excel_form" enctype="multipart/form-data">
+                  <table class="table">
+                    <tr>
+                      <td width="25%" align="right">Select Excel File</td>
+                      <td width="50%"><input type="file" name="select_excel" /></td>
+                      <td width="25%"><input type="submit" name="load" class="btn btn-primary" /></td>
+                    </tr>
+                  </table>
+                </form>
+             <br />
+                <div id="excel_area"></div>
+            </div>
+           </div>
+        <!-- end benifit list -- -->
+
+        {% endblock %}
+

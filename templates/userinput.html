@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+{% block content %}
+
+        <!-- <style>
+            body{
+                color: rgb(13, 113, 13);
+                text-align: center;
+                width: 100%;
+                height: 100%;
+                margin: 50px;
+                padding: 15px;
+                background-color: antiquewhite;
+            }
+            .name {
+                color: red;
+                text-align: center;
+                margin: 10px auto;
+              
+            }
+            .btn{
+                text-align: center;
+                margin-top: 20px;               
+            }
+            
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100px;
+                overflow-wrap: break-word;
+                margin-left: 0px;
+                /* color: #009688; */
+                padding: 0;
+              }
+            
+              td,
+              th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+                margin-right: -20px;
+              }
+            
+              tr:nth-child(even) {
+                background-color: #D6EEEE;
+              }
+            
+              td {
+                white-space: nowrap;
+              }
+        </style> -->
+   
+    <body>
+        <table style="text-align:center; border:2px solid red; width:100%; background-color:rgb(161, 247, 150); margin-top:200px; padding:15px;margin-bottom:20px;">
+            <tr>
+                <td>
+                    <form onSubmit='event.preventDefault(); onFormSubmit()' autocomplete='off'>
+                        <div class="name">
+                            <label for="">Full Name</label>
+                            <input type="text" name="fullName" id="fullName" >
+                        </div>
+                        <br>
+
+                        <div class="name">
+                            <label for="">Enter  email</label>
+                            <input type="text" name="empcode" id="email" >
+                        </div>
+                        <br>
+
+                        <div class="name">
+                            <label for="">Phone number</label>
+                            <input type="text" name="city" id="city" >
+                        </div>
+                        <div class="btn">
+                            <input type="submit" value="submit">
+                        </div>
+                    </form>
+                </td>
+                <td>
+                    <table class="list" id="employeelist" style="text-align:center; border:2px solid red; width:100%; height:100%">
+                        <thead>
+                            <tr >
+                                <th >Employee name </th>
+                                <th >Employee email</th>
+                                <th >Phone number</th>
+                                <th >Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <!-- <script src="crud.js"></script> -->
+        <script>
+            var selectedRow = null;
+function onFormSubmit(){
+    var formData= readFormData();
+    if(selectedRow == null){
+        insertNewRecord(formData);
+    }
+    else{
+        updateRecord(formData);
+    }
+    
+    resetForm();
+    document.getElementById('fullName').focus;
+}
+
+function readFormData(){
+    var fromData = {};
+    fromData["fullName"]=document.getElementById('fullName').value;
+    fromData["email"]=document.getElementById('email').value;
+    fromData["city"]=document.getElementById('city').value;
+    return fromData;
+}
+function resetForm(){
+    document.getElementById('fullName').value='';
+    document.getElementById('email').value='';
+    document.getElementById('city').value='';
+}
+
+function insertNewRecord(data){
+    // var formData = {};
+    var table= document.getElementById('employeelist').getElementsByTagName('tbody')[0];
+    var newRow = table.insertRow(table.length);
+    cell1 = newRow.insertCell(0);
+    cell1.innerHTML = data.fullName;
+
+    cell2 = newRow.insertCell(1);
+    cell2.innerHTML = data.email;
+
+    cell3 = newRow.insertCell(2);
+    cell3.innerHTML = data.city;
+
+    cell4 = newRow.insertCell(3);
+    cell4.innerHTML = `<input type="button" value="Edit" onClick="onEdit(this)"> ||
+    <input type="button" value="Delete" onClick="onDelete(this)">`;
+}
+function onEdit(td) {
+    selectedRow = td.parentElement.parentElement;
+    document.getElementById('fullName').value=selectedRow.cells[0].innerHTML;
+
+    document.getElementById('email').value=selectedRow.cells[1].innerHTML;
+
+    document.getElementById('city').value=selectedRow.cells[2].innerHTML;
+}
+
+function updateRecord(formData){
+    selectedRow.cells[0].innerHTML=formData.fullName;
+    selectedRow.cells[1].innerHTML=formData.email;
+    selectedRow.cells[2].innerHTML=formData.city;
+}
+function onDelete(td){
+    if(confirm("are u sure")){
+        row = td.parentElement.parentElement;
+        document.getElementById('employeelist').deleteRow(row.rowIndex);
+    }
+    resetForm();
+   
+}
+        </script>
+    </body>
+    {% endblock %}

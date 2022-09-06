@@ -1,0 +1,187 @@
+@import url('http://fonts.googleapis.com/ css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', scan-sarif;
+    box-sizing: border-box;
+
+}
+
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+section .imgBox{
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+
+section .imgBox::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+    /* background: linear-gradient( 225deg, green ,white); */
+    background: linear-gradient( 225deg, rgb(62, 238, 71) ,white);
+    z-index: -1;
+    mix-blend-mode: screen;
+    
+}
+section .imgBox img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+
+section .contentbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+section .contentbox .formbox{
+    width: 50%;
+}
+section .contentbox .formbox h2{
+    color: greenyellow;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 4px solid red;
+    display: inline-block;
+    letter-spacing:1px;
+
+}
+section .contentbox .formbox .inputbox{
+    margin-bottom: 20px;
+}
+section .contentbox .formbox .inputbox span{
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #607db8;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+section .contentbox .formbox .inputbox input{
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    font-weight: 400;
+    border: 1px solid #607d8b;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #607d8b;
+    background: transparent;
+    border-radius: 30px;
+
+}
+section .contentbox .formbox .inputbox input[type="submit"]{
+    background: #72e64f;
+    /* color: #fff; */
+    color: red;
+    outline: none;
+    margin-top: -20px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* section .contentbox .formbox .inputbox input[type="submit"]:hover{
+    background: greenyellow;
+} */
+section .contentbox .formbox .btn:hover{
+    background: greenyellow;
+}
+
+section .contentbox .formbox .remember{
+    margin-bottom: 10px;
+    color: rgb(48, 239, 14);
+    font-weight: 400;
+    font-size: 17px;
+}
+section .contentbox .formbox .inputbox p{
+    /* color: rgb(34, 194, 87); */
+    color: black;
+}
+section .contentbox .formbox .inputbox p a{
+    color: rgb(121, 240, 121);
+    /* underline: none; */
+    /* border-bottom: none; */
+}
+section .contentbox .formbox h3
+{
+    color: rgb(54, 255, 47);
+    /* border-bottom: 2px solid red; */
+    text-align: center;
+    margin: 30px 0 10px;
+    font-weight: 500;
+
+}
+section .contentbox .formbox .sci{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section .contentbox .formbox .sci li{
+    list-style: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #607d8b;
+    border-radius: 50%;
+    margin: 0 7px;
+    cursor: pointer;
+}
+
+section .contentbox .formbox .sci li:hover{
+    background: greenyellow;
+}
+
+@media(max-width:768px){
+    section .imgBox{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    section .contentbox{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+    section .contentbox .formbox {
+        width: 100%;
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.9);
+        margin: 50px;
+    }
+    section .contentbox .formbox h3{
+        color: #607d8b;
+        text-align: center;
+        margin: 30px 0 10px ;
+        font-weight: 500;
+    }
+}

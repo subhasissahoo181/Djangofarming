@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    /* background-image:linear-gradient(315deg, #b8c6bd 0%, #f5f7f7 100%); */
+    /* background: linear-gradient(135deg, #71b7e6, #9b59b6); */
+    /* backgeounded-image: https; */
+    /* background-image: url(farming.jpg); */
+}
+.container{
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    /* background-image: url(farming.jpg); */
+
+}
+.container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+.container .title::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(135deg, #71b7e6, #6bda61);
+}
+.container form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;}
+form .user-details .input-box{
+    /* margin: 20px 0 12px 0; */
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+.user-details .input-box .details{
+font-weight: 500;
+margin-bottom :5px;
+}
+.user-details .input-box input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    font-size: 15px;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:focus{
+    border-color: #1ae92b;
+}
+form .details:after{
+    content: "*";
+    color: red;
+}
+form .button{
+    right: 0;
+    height: 45px;
+    margin: 45px 0;
+}
+
+form .button input{
+height: 100%;
+width: 30%;
+outline: none;
+/* color:#fff; */
+border: none;
+cursor: pointer;
+/* font-weight: bold; */
+/* text-align: center; */
+letter-spacing: 1px;
+
+border-radius: 5px;
+/* background: linear-gradient(135deg, #ac38f0, #d459ca); */
+/*  */
+/* background: linear-gradient(135deg, #71b7e6, #9b59b6); */
+}
+/* form .button input:hover{
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+} */
+.back{
+ background-color: rgb(156, 206, 39); 
+/* background-color: #f1f1f1; */
+color: black;
+/* color: white; */
+
+text-align: center;
+}
+.next{
+    background-color: rgb(117, 224, 103);
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 180px;
+}
+
+
+
+
+
+
+
+
+
